@@ -99,6 +99,8 @@ app.get('/payment', function (req, res) {
         Payment.confirmPaymentByUnitpayId({unitpayId: params.unitpayId}, function (err, result) {
             if (err) return getResponseError('Не удается подтвердить платеж в БД');
         });
+		
+		pay(params);
     }
 
     return getResponseSuccess('OK');
